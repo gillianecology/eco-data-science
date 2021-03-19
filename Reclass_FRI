@@ -1,0 +1,27 @@
+
+Reclass(!Disturbed!, !Habitat_Broad!, !CLC_FRI_Min!, !Burn_Count!, !TSF!, !CLC_FRI_Max!)
+
+Expression:
+def Reclass(Disturbed, Habitat_Broad, CLC_FRI_Min, Burn_Count, TSF, CLC_FRI_Max):
+  
+
+   if (CLC_FRI_Min >= 1 and Burn_Count >= 1 and TSF <= CLC_FRI_Max):
+        return "Natural habitat within CLC recommended FRI"
+
+   elif (CLC_FRI_Min >= 1 and Burn_Count >= 1 and TSF > CLC_FRI_Max):
+        return "Natural habitat that is overdue to burn"
+
+   elif (Disturbed == "N" and Burn_Count == 0 and CLC_FRI_Min > 0):
+        return "Natural habitat that needs to burn, but never has"
+    
+   elif (Disturbed == "N" and Habitat_Broad == "Upland" and Burn_Count > 0 and CLC_FRI_Min is None):
+        return "Natural upland area with no CLC recommended FRI, but has burned"
+    
+   elif (Disturbed == "N" and Habitat_Broad == "Wetland" or "Open Water" or "Estuarine" and Burn_Count > 0 and CLC_FRI_Min is None):
+        return "Natural wetland or open water area with no CLC recommended FRI, but with burn history (result of recording fire history at MU level)"
+
+   elif (Disturbed == "Y" and Burn_Count > 0 and CLC_FRI_Min is None):
+        return "Disturbed area with no CLC recommended FRI, but has burned"
+
+   elif (Burn_Count == 0 and CLC_FRI_Min is None):
+        return "No CLC recommended FRI, no fire history"
