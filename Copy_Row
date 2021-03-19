@@ -1,0 +1,23 @@
+Sub Copy_Row()
+Dim NRow As Integer
+Dim CurrentRow As Integer
+Dim SheetName As String
+Dim Datasheet As String
+Datasheet = ActiveSheet.Name
+ActiveWorkbook.Sheets.Add after:=Sheets(Datasheet)
+SheetName = ActiveSheet.Name
+Sheets(Datasheet).Select
+Range("A1").Select
+Do Until Selection.Value = "x"
+CurrentRow = Selection.Row
+NRow = 6
+Selection.EntireRow.Copy
+Sheets(SheetName).Select
+ActiveCell.Range("A1:A" & NRow).EntireRow.Select
+ActiveSheet.Paste
+Application.CutCopyMode = False
+ActiveCell.Range("A" & NRow).Offset(1, 0).Select
+Sheets(Datasheet).Select
+ActiveCell.Offset(1, 0).Select
+Loop
+End Sub
