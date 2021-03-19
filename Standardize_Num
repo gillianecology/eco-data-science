@@ -1,0 +1,11 @@
+fix_num(!CameraNumber!)
+
+def fix_num(CameraNumber):
+# Use an if statement to check if the zero is missing
+    if(len(CameraNumber) == 3):
+# If this is the case, return the value with a zero after the dash
+        return CameraNumber[ : 2] + '0' + CameraNumber[ 2: ]
+# Otherwise...
+    else:
+# Return the value itself
+        return str(CameraNumber)
