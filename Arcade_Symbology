@@ -1,0 +1,7 @@
+When($feature["ELM_FRI"]>0 && $feature["Burn_Count"]==1 && $feature["TSF"] <= $feature["ELM_FRI"], burned once, meeting target, $feature["ELM_FRI"]>0 && $feature["Burn_Count"]==1 && $feature["TSF"] > $feature["ELM_FRI"], burned once, not meeting target, $feature["ELM_FRI"]==0 && $feature["Burn_Count"]>0, no target FRI, but has burned, $feature["ELM_FRI"]>0 && $feature["Burn_Count"]==0, never burned, not meeting target ,5)
+
+When($feature.TSF <2, 1, 
+$feature.TSF >=2 && $feature.TSF <=5, 2, 
+$feature.TSF >5 && $feature.TSF <=15, 3, 
+$feature.TSF >15, 4,5)
+
