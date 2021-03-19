@@ -1,0 +1,3 @@
+Fire_NC_2021_0317.Burn_Count > 0 And 
+Fire_NC_2021_0317.FNAI_NC = 'mesic flatwoods' 
+And Fire_NC_2021_0317.TSF <= 5
