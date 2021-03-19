@@ -1,0 +1,10 @@
+import os
+
+paths = (os.path.join(root, filename)
+        for root, _, filenames in os.walk ('C:\Bats\SE\Data')
+        for filename in filenames)
+
+for path in paths:
+    newname = path.replace('HMI02__0__', '37532_SE_')
+    if newname != path:
+        os.rename(path, newname)
