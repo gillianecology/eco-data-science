@@ -1,0 +1,27 @@
+When($feature.Symbol==2, $feature.Species, $feature.Symbol==1, null, $feature.Species)
+
+var species = $feature.Species;
+if (species == "Calopogon multiflorus") {
+    return'';
+} else if (species == "Chrysopsis floridana") {
+    return'';    
+} else if (species == "Encyclia tampensis") {
+    return'';    
+} else if (species == "Lilium catesbaei") {
+    return'';    
+} else if (species == "Opuntia stricta") {
+    return'';    
+} else if (species == "Orthochilus ecristatus") {
+    return'';    
+} else if (species == "Pogonia ophioglossoides") {
+    return'';    
+} else if (species == "Sacoila lanceolata var. lanceolata") {
+    return'';    
+} else if (species == "Sarracenia minor") {
+    return'';    
+} else if (species == "Tillandsia utriculata") {
+    return'';    
+
+}  else {
+    return $feature.Species;
+}
