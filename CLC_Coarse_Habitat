@@ -1,0 +1,37 @@
+def TextValue(FromCode):
+   if FromCode > 0 and FromCode < 1810:
+        return "Upland"
+   elif FromCode < 1821:
+        return "Altered Habitat 1"
+   elif FromCode < 1832:
+        return "Altered Habitat - Restoration Possible 1"
+   elif FromCode < 1840:
+        return "Altered Habitat 2"
+   elif FromCode < 1877:
+        return "Altered Habitat - Restoration Possible 2"
+   elif FromCode < 1880:
+        return "Altered Habitat 3”
+   elif FromCode < 2111:
+        return "Altered Habitat - Restoration Possible 3"
+   elif FromCode < 2112:
+        return "Wetland 1"
+   elif FromCode < 3200:
+        return "Open Water"
+   elif FromCode < 5220:
+        return "Wetland 2"
+   elif FromCode < 18211:
+        return "Altered Habitat - Restoration Possible 4"
+   elif FromCode < 18212:
+        return "Altered Habitat 4"
+   elif FromCode < 18312:
+        return "Altered Habitat - Restoration Possible 5"
+   elif FromCode < 21212:
+        return "Wetland 3"
+   elif FromCode < 182112:
+        return "Altered Habitat 5"
+   elif FromCode < 183311:
+        return "Upland 2"
+   elif FromCode < 1933151:
+        return "Altered Habitat - Restoration Possible 6"
+ else:
+        return "N/A"
